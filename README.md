@@ -1,11 +1,11 @@
 # htb-late
 My scripts and write-up for the HackTheBox machine Late, an infuriating but rewarding box once it was cracked
 
-I have decided to summarize this and remove my pages and pages of notes as I don't think they are very helpful in retrospect.  You're welcome. :)
+I have decided to summarize this and remove my pages and pages of notes as I don't think they are very helpful in retrospect.  I've created a much longer writeup in htb-late.md. You're welcome. :)
 
 :: Enumeration
 
-The machine had a port 22 and 80 open, with a website titled ‘Late - Best online image tools’. The page discussed image manipulation, and had a contact page that looked to not do anything..  Opened up the source to scan thru, and found a vhost in a link there, to 'http://images.late.htb'.  Added this to my /etc/hosts with the same IP and started scanning it with gobuster, and went and took a look at it.
+The machine had a port 22 and 80 open, with a website titled 'Late - Best online image tools'. The page discussed image manipulation, and had a contact page that looked to not do anything..  Opened up the source to scan thru, and found a vhost in a link there, to 'http://images.late.htb'.  Added this to my /etc/hosts with the same IP and started scanning it with gobuster, and went and took a look at it.
 
 This was a different and much simpler site. I was able to upload a jpg or png image, and convert it back into text, a process called OCR.   I tried this process through burp, saw if maybe I could upload different types of files, etc.  Nothing stood out to be too interesting, it only took images/* file types and only seemed to be happy with png or jpg files when I used burp intruder to try a few different file extensions.  It also mentioned at the top of the page that it used Flask, which really helped me find what I was looking for much quicker.  
 
