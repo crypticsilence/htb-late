@@ -3,6 +3,8 @@ My scripts and write-up for the HackTheBox machine Late, an infuriating but rewa
 
 I have decided to summarize this and remove my pages and pages of notes as I don't think they are very helpful in retrospect.  I've created a much longer writeup in htb-late.md. You're welcome. :)
 
+Exploits can be found in the /imguploader directory.
+
 :: Enumeration
 
 The machine had a port 22 and 80 open, with a website titled 'Late - Best online image tools'. The page discussed image manipulation, and had a contact page that looked to not do anything..  Opened up the source to scan thru, and found a vhost in a link there, to 'http://images.late.htb'.  Added this to my /etc/hosts with the same IP and started scanning it with gobuster, and went and took a look at it.

