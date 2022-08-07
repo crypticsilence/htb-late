@@ -1,7 +1,7 @@
 # htb-late
 *My scripts and write-up for the HackTheBox machine Late, an infuriating but rewarding box once it was cracked*
 
-I have decided to summarize this and move my pages and pages of notes as I don't think they are very helpful in retrospect.  I've created a much longer writeup in (long-writeup)[long-writeup/htb-late.md]. You're welcome. :)
+I have decided to summarize this and move my pages and pages of notes as I don't think they are very helpful in retrospect.  I've created a much longer writeup in [long-writeup/htb-late.md](long-writeup/htb-late.md). You're welcome. :)
 
 Exploits can be found in the /imguploader directory.
 
